@@ -74,9 +74,9 @@ cron.schedule("0 * * * *", () => {
 // app.use("/api/users", userRouter);
 // app.use("/api/auth", authRouter);
 // app.use("/api/admin", adminRouter);
-app.use("/api/songs", songsRouter);
-app.use("/api/albums", albumsRouter);
-app.use("/api/stats", statsRouter);
+// app.use("/api/songs", songsRouter);
+// app.use("/api/albums", albumsRouter);
+// app.use("/api/stats", statsRouter);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../musicmate-view/dist")));
