@@ -80,20 +80,11 @@ app.use("/api/stats", statsRouter);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../musicmate-view/dist")));
+
   app.get("*", (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, "../musicmate-view", "dist", "index.html")
-    );
+    res.sendFile(path.resolve(__dirname, "../musicmate-view/dist/index.html"));
   });
 }
-
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "../musicmate-view/dist")));
-
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "../musicmate-view/dist/index.html"));
-//   });
-// }
 
 //For Error Handling
 app.use((error, req, res, next) => {
