@@ -71,9 +71,9 @@ cron.schedule("0 * * * *", () => {
 });
 
 //Routes
-app.use("/api/users", userRouter);
-app.use("/api/auth", authRouter);
-app.use("/api/admin", adminRouter);
+// app.use("/api/users", userRouter);
+// app.use("/api/auth", authRouter);
+// app.use("/api/admin", adminRouter);
 app.use("/api/songs", songsRouter);
 app.use("/api/albums", albumsRouter);
 app.use("/api/stats", statsRouter);
