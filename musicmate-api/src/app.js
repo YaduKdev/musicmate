@@ -34,7 +34,7 @@ app.use(
   cors({
     origin: VIEW_URI,
     credentials: true,
-  })
+  }),
 );
 
 app.use(express.json());
@@ -51,7 +51,7 @@ app.use(
     limits: {
       fileSize: 15 * 1024 * 1024, //15MB
     },
-  })
+  }),
 );
 //cron jobs - delete tmp files every hour
 const tmpDir = path.join(process.cwd(), "tmp");
@@ -81,7 +81,7 @@ app.use("/api/stats", statsRouter);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../musicmate-view/dist")));
 
-  app.get("/*any", (req, res) => {
+  app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../musicmate-view/dist/index.html"));
   });
 }
