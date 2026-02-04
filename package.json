@@ -1,8 +1,7 @@
 {
   "name": "music-mate",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
+  "main": "app.js",
   "scripts": {
     "build": "npm install --prefix musicmate-api && npm install --prefix musicmate-view && npm run build --prefix musicmate-view",
     "start": "npm start --prefix musicmate-api"
